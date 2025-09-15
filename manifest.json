@@ -1,6 +1,6 @@
 {
   "name": "REUNIFIED SERVICES",
-  "short_name": "PWA",
+  "short_name": "Services",
   "start_url": "./index.html",
   "display": "fullscreen",
   "background_color": "#000000",

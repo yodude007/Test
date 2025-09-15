@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PWA Home</title>
+  <link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#000000" />
+<!-- iOS fullscreen support -->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="apple-mobile-web-app-title" content="My PWA" />
+<link rel="apple-touch-icon" href="icon-192.png" />
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      font-family: Arial, sans-serif;
+      overflow: hidden; /* Prevent scrollbars */
+    }
+
+    /* Background */
+    body {
+      background: url("background.jpg") no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    /* Button container */
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px; /* space between buttons */
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+    }
+
+    /* Show buttons after fade-in trigger */
+    .button-container.show {
+      opacity: 1;
+    }
+
+    /* Buttons */
+    .custom-btn {
+      background: rgba(255, 255, 255, 0.8);
+      border: none;
+      padding: 15px 25px;
+      font-size: 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      width: 300px;
+      text-align: center;
+      transition: background 0.3s;
+    }
+
+    .custom-btn:hover {
+      background: rgba(255, 255, 255, 1);
+    }
+  </style>
+</head>
+<body>
+  <!-- Button Stack -->
+  <div class="button-container" id="buttonContainer">
+    <button class="custom-btn">GOOGLE DRIVE [SUBMIT PAPERWORK]</button>
+    <button class="custom-btn">GOOGLE CHAT [CHAT WITH TEAM]</button>
+    <button class="custom-btn">GOOGLE FORMS [TO REPORT A CANCELLATION, ETC.]</button>
+    <button class="custom-btn">PAPERWORK [PDF FILES]</button>
+  </div>
+
+  <script>
+    // Wait 0.5s then fade buttons in
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        document.getElementById("buttonContainer").classList.add("show");
+      }, 500);
+    });
+  </script>
+  <script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("sw.js");
+  }
+</script>
+</body>
+</html>

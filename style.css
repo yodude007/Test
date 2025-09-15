@@ -1,0 +1,35 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+  background-color: #f0f8ff;
+}
+
+.container {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 80%;
+  max-width: 400px;
+}
+
+.pdf-button {
+  display: block;
+  padding: 20px;
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.pdf-button:hover {
+  background-color: #45a049;
+}

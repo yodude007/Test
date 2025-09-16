@@ -1,3 +1,4 @@
+/* Reset page */
 body, html {
   margin: 0;
   padding: 0;
@@ -9,6 +10,7 @@ body, html {
   background-color: #f0f8ff;
 }
 
+/* Button container */
 .container {
   margin-top: 50px;
   display: flex;
@@ -16,20 +18,47 @@ body, html {
   gap: 20px;
   width: 80%;
   max-width: 400px;
+  opacity: 0;                  /* start hidden for fade-in */
+  transition: opacity 0.8s;    /* smooth fade */
 }
 
+.container.show {
+  opacity: 1;                  /* show after fade-in */
+}
+
+/* Buttons */
 .pdf-button {
-  display: block;
-  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 20px;
   background-color: #4CAF50;
   color: white;
-  text-align: center;
   text-decoration: none;
-  font-size: 18px;
   border-radius: 10px;
   cursor: pointer;
+
+  font-size: clamp(12px, 2.5vw, 18px); /* auto shrink text */
+  white-space: nowrap;                 /* keep text on one line */
+  text-align: center;
+
+  height: 60px;              /* same height for all buttons */
 }
 
+/* Hover effect */
 .pdf-button:hover {
   background-color: #45a049;
+}
+
+/* Italics for bracket text */
+.bracket-text {
+  font-style: italic;
+}
+
+/* Responsive for very small screens */
+@media (max-width: 400px) {
+  .pdf-button {
+    height: 50px;   /* smaller height */
+    font-size: 14px; /* smaller font */
+  }
 }

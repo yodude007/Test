@@ -60,28 +60,34 @@
       text-align: center;
       transition: background 0.3s;
 
-      /* NEW: auto shrink + uniform height */
+      /* Uniform look */
       font-size: clamp(12px, 2.5vw, 18px);
-      white-space: nowrap;
-      height: 60px; /* all buttons same height */
+      height: 80px; /* all buttons same height */
       display: flex;
+      flex-direction: column; /* stack text + bracket */
       justify-content: center;
       align-items: center;
+      line-height: 1.2;
+      padding: 8px;
     }
 
     .custom-btn:hover {
       background: rgba(255, 255, 255, 1);
     }
 
-    /* Italic for bracket text */
+    .main-text {
+      font-weight: bold;
+    }
+
     .bracket-text {
       font-style: italic;
+      margin-top: 4px;
     }
 
     /* Smaller buttons on very small screens */
     @media (max-width: 400px) {
       .custom-btn {
-        height: 50px;
+        height: 70px;
         font-size: 14px;
       }
     }
@@ -91,16 +97,20 @@
   <!-- Button Stack -->
   <div class="button-container" id="buttonContainer">
     <button class="custom-btn">
-      GOOGLE DRIVE <span class="bracket-text">[SUBMIT PAPERWORK]</span>
+      <span class="main-text">GOOGLE DRIVE</span>
+      <span class="bracket-text">[SUBMIT PAPERWORK]</span>
     </button>
     <button class="custom-btn">
-      GOOGLE CHAT <span class="bracket-text">[CHAT WITH TEAM]</span>
+      <span class="main-text">GOOGLE CHAT</span>
+      <span class="bracket-text">[CHAT WITH TEAM]</span>
     </button>
     <button class="custom-btn">
-      GOOGLE FORMS <span class="bracket-text">[TO REPORT A CANCELLATION, ETC.]</span>
+      <span class="main-text">GOOGLE FORMS</span>
+      <span class="bracket-text">[TO REPORT A CANCELLATION, ETC.]</span>
     </button>
     <button class="custom-btn">
-      PAPERWORK <span class="bracket-text">[PDF FILES]</span>
+      <span class="main-text">PAPERWORK</span>
+      <span class="bracket-text">[PDF FILES]</span>
     </button>
   </div>
 

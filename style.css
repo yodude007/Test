@@ -29,6 +29,7 @@ body, html {
 /* Buttons */
 .pdf-button {
   display: flex;
+  flex-direction: column;       /* stack text + bracket */
   justify-content: center;
   align-items: center;
   padding: 15px 20px;
@@ -39,10 +40,10 @@ body, html {
   cursor: pointer;
 
   font-size: clamp(12px, 2.5vw, 18px); /* auto shrink text */
-  white-space: nowrap;                 /* keep text on one line */
   text-align: center;
 
-  height: 60px;              /* same height for all buttons */
+  height: 80px;   /* taller to fit 2 lines */
+  line-height: 1.2;
 }
 
 /* Hover effect */
@@ -50,15 +51,21 @@ body, html {
   background-color: #45a049;
 }
 
-/* Italics for bracket text */
+/* Main line of button (top) */
+.main-text {
+  font-weight: bold;
+}
+
+/* Italics for bracket text (bottom) */
 .bracket-text {
   font-style: italic;
+  margin-top: 4px;  /* small space under main text */
 }
 
 /* Responsive for very small screens */
 @media (max-width: 400px) {
   .pdf-button {
-    height: 50px;   /* smaller height */
+    height: 70px;   /* smaller height */
     font-size: 14px; /* smaller font */
   }
 }

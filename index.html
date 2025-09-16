@@ -11,104 +11,24 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   <meta name="apple-mobile-web-app-title" content="REUNIFIED SERVICES" />
   <link rel="apple-touch-icon" href="icon-192.png" />
-
-  <style>
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html, body {
-      height: 100%;
-      width: 100%;
-      font-family: Arial, sans-serif;
-      overflow: hidden; /* Prevent scrollbars */
-    }
-
-    /* Background */
-    body {
-      background: url("background.jpg") no-repeat center center/cover;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-    }
-
-    /* Button container */
-    .button-container {
-      display: flex;
-      flex-direction: column;
-      gap: 20px; /* space between buttons */
-      opacity: 0;
-      transition: opacity 0.8s ease-in-out;
-    }
-
-    /* Show buttons after fade-in trigger */
-    .button-container.show {
-      opacity: 1;
-    }
-
-    /* Buttons */
-    .custom-btn {
-      background: rgba(255, 255, 255, 0.8);
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      width: 300px;
-      text-align: center;
-      transition: background 0.3s;
-
-      /* Uniform look */
-      font-size: clamp(12px, 2.5vw, 18px);
-      height: 80px; /* all buttons same height */
-      display: flex;
-      flex-direction: column; /* stack text + bracket */
-      justify-content: center;
-      align-items: center;
-      line-height: 1.2;
-      padding: 8px;
-    }
-
-    .custom-btn:hover {
-      background: rgba(255, 255, 255, 1);
-    }
-
-    .main-text {
-      font-weight: bold;
-    }
-
-    .bracket-text {
-      font-style: italic;
-      margin-top: 4px;
-    }
-
-    /* Smaller buttons on very small screens */
-    @media (max-width: 400px) {
-      .custom-btn {
-        height: 70px;
-        font-size: 14px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <!-- Button Stack -->
-  <div class="button-container" id="buttonContainer">
-    <button class="custom-btn">
+  <div class="container" id="buttonContainer">
+    <button class="pdf-button">
       <span class="main-text">GOOGLE DRIVE</span>
       <span class="bracket-text">[SUBMIT PAPERWORK]</span>
     </button>
-    <button class="custom-btn">
+    <button class="pdf-button">
       <span class="main-text">GOOGLE CHAT</span>
       <span class="bracket-text">[CHAT WITH TEAM]</span>
     </button>
-    <button class="custom-btn">
+    <button class="pdf-button">
       <span class="main-text">GOOGLE FORMS</span>
       <span class="bracket-text">[TO REPORT A CANCELLATION, ETC.]</span>
     </button>
-    <button class="custom-btn">
+    <button class="pdf-button">
       <span class="main-text">PAPERWORK</span>
       <span class="bracket-text">[PDF FILES]</span>
     </button>

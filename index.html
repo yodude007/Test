@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PWA Home</title>
+  <title>REUNIFIED SERVICES</title>
   <link rel="manifest" href="manifest.json" />
-<meta name="theme-color" content="#000000" />
-<!-- iOS fullscreen support -->
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-<meta name="apple-mobile-web-app-title" content="REUNIFIED SERVICES" />
-<link rel="apple-touch-icon" href="icon-192.png" />
+  <meta name="theme-color" content="#000000" />
+  <!-- iOS fullscreen support -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-title" content="REUNIFIED SERVICES" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+
   <style>
     /* Reset */
     * {
@@ -53,36 +54,55 @@
     .custom-btn {
       background: rgba(255, 255, 255, 0.8);
       border: none;
-      padding: 15px 25px;
-      font-size: 18px;
       border-radius: 10px;
       cursor: pointer;
       width: 300px;
       text-align: center;
       transition: background 0.3s;
+
+      /* NEW: auto shrink + uniform height */
+      font-size: clamp(12px, 2.5vw, 18px);
+      white-space: nowrap;
+      height: 60px; /* all buttons same height */
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .custom-btn:hover {
       background: rgba(255, 255, 255, 1);
+    }
+
+    /* Italic for bracket text */
+    .bracket-text {
+      font-style: italic;
+    }
+
+    /* Smaller buttons on very small screens */
+    @media (max-width: 400px) {
+      .custom-btn {
+        height: 50px;
+        font-size: 14px;
+      }
     }
   </style>
 </head>
 <body>
   <!-- Button Stack -->
   <div class="button-container" id="buttonContainer">
-  <button class="custom-btn">
-    GOOGLE DRIVE <span class="bracket-text">[SUBMIT PAPERWORK]</span>
-  </button>
-  <button class="custom-btn">
-    GOOGLE CHAT <span class="bracket-text">[CHAT WITH TEAM]</span>
-  </button>
-  <button class="custom-btn">
-    GOOGLE FORMS <span class="bracket-text">[TO REPORT A CANCELLATION, ETC.]</span>
-  </button>
-  <button class="custom-btn">
-    PAPERWORK <span class="bracket-text">[PDF FILES]</span>
-  </button>
-</div>
+    <button class="custom-btn">
+      GOOGLE DRIVE <span class="bracket-text">[SUBMIT PAPERWORK]</span>
+    </button>
+    <button class="custom-btn">
+      GOOGLE CHAT <span class="bracket-text">[CHAT WITH TEAM]</span>
+    </button>
+    <button class="custom-btn">
+      GOOGLE FORMS <span class="bracket-text">[TO REPORT A CANCELLATION, ETC.]</span>
+    </button>
+    <button class="custom-btn">
+      PAPERWORK <span class="bracket-text">[PDF FILES]</span>
+    </button>
+  </div>
 
   <script>
     // Wait 0.5s then fade buttons in
@@ -92,10 +112,11 @@
       }, 500);
     });
   </script>
+
   <script>
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("sw.js");
-  }
-</script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("sw.js");
+    }
+  </script>
 </body>
 </html>

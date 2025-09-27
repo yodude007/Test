@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>REUNIFIED SERVICES APP</title>
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-title" content="REUNIFIED SERVICES" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; width: 100%; font-family: Arial, sans-serif; overflow: hidden; display: flex; justify-content: center; align-items: center; background: url("background.jpg") no-repeat center center/cover; }
+    .button-container { display: flex; flex-direction: column; gap: 20px; opacity: 0; transition: opacity 0.8s ease-in-out; width: 100%; max-width: 300px; }
+    .button-container.show { opacity: 1; }
+    .custom-btn { display: flex; flex-direction: column; justify-content: center; align-items: center; background: rgba(255, 255, 255, 0.85); border: none; border-radius: 10px; cursor: pointer; width: 100%; height: 60px; font-size: clamp(14px, 3vw, 20px); text-align: center; line-height: 1.2; transition: background 0.3s; color: black; }
+    .custom-btn:hover { background: rgba(255, 255, 255, 1); }
+    .main-text { font-weight: bold; }
+    .bracket-text { font-style: italic; margin-top: 3px; font-size: 0.9em; }
+    @media (max-width: 400px) { .custom-btn { height: 55px; font-size: 15px; } }
+  </style>
+</head>
+<body>
+  <div class="button-container" id="buttonContainer">
+    <button class="custom-btn">GOOGLE DRIVE <span class="bracket-text">[SUBMIT PAPERWORK]</span></button>
+    <button class="custom-btn">GOOGLE CHAT

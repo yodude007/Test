@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>REUNIFIED SERVICES LOGIN</title>
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-title" content="REUNIFIED SERVICES" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; width: 100%; font-family: Arial, sans-serif; display: flex; justify-content: center; align-items: center; background: url("background.jpg") no-repeat center center/cover; }
+    .login-container { display: flex; flex-direction: column; gap: 15px; width: 100%; max-width: 300px; padding: 20px; background: rgba(255, 255, 255, 0.85); border-radius: 10px; opacity: 0; transition: opacity 0.8s ease-in-out; }
+    .login-container.show { opacity: 1; }
+    .login-container h2 { text-align: center; margin-bottom: 10px; font-size: 20px; font-weight: bold; }
+    input[type="email"], input[type="password"] { width: 100%; padding: 10px; font-size: 16px; border-radius: 8px; border: 1px solid #ccc; }
+    .login-btn { display: flex; justify-content: center; align-items: center; padding: 12px; background: rgba(255, 255, 255, 0.85); border: none; border-radius: 10px; cursor: pointer; font-size: clamp(14px, 3vw, 18px); font-weight: bold; color: black; transition: background 0.3s; text-decoration: none; }
+    .login-btn:hover { background: rgba(255, 255, 255, 1); }
+    .link-text { text-align: center; font-size: 14px; color: blue; cursor: pointer; text-decoration: underline; }
+    @media (max-width: 400px) { .login-btn { padding: 10px; font-size: 15px; } input[type="email"], input[type="password"] { padding: 8px; font-size: 14px; } }
+  </style>
+</head>
+<body>
+  <div class="login-container" id="loginContainer">
+    <h2>Login</h2>
+    <input type="email" id="email" placeholder="Email (@reunifiedservice.com)">
+    <input type="password" id="password" placeholder="Password">
+    <button class="login-btn" onclick="login()">Login</button>
+    <div class="link-text" onclick="newUser()">New User?</div>
+    <div class="link-text" onclick="forgotPassword()">Forgot Password?</div>
+  </div>
+
+  <script>
+    window.addEventListener("load", () => { setTimeout(() => { document.getElementById("loginContainer").classList.add("show"); }, 500); });
+
+    function login() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      if (email === "r@reunifiedservice.com" && password === "test") {
+        window.location.href = "appbuttons.html"; // redirect to third page
+      } else {
+        alert("Invalid email or password. Use r@reunifiedservice.com / test for now.");
+      }
+    }
+
+    function newUser() { alert("New User registration page (to be implemented)."); }
+    function forgotPassword() { alert("Forgot password feature for @reunifiedservice.com (simulated)."); }
+
+    if ("serviceWorker" in navigator) { navigator.serviceWorker.register("sw.js"); }
+  </script>
+</body>
+</html>

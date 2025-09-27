@@ -1,4 +1,3 @@
-/* Reset page */
 body, html {
   margin: 0;
   padding: 0;
@@ -10,7 +9,6 @@ body, html {
   background-color: #f0f8ff;
 }
 
-/* Button container */
 .container {
   margin-top: 50px;
   display: flex;
@@ -18,54 +16,20 @@ body, html {
   gap: 20px;
   width: 80%;
   max-width: 400px;
-  opacity: 0;                  /* start hidden for fade-in */
-  transition: opacity 0.8s;    /* smooth fade */
 }
 
-.container.show {
-  opacity: 1;                  /* show after fade-in */
-}
-
-/* Buttons */
 .pdf-button {
-  display: flex;
-  flex-direction: column;       /* stack text + bracket */
-  justify-content: center;
-  align-items: center;
-  padding: 15px 20px;
+  display: block;
+  padding: 20px;
   background-color: #4CAF50;
   color: white;
+  text-align: center;
   text-decoration: none;
+  font-size: 18px;
   border-radius: 10px;
   cursor: pointer;
-
-  font-size: clamp(12px, 2.5vw, 18px); /* auto shrink text */
-  text-align: center;
-
-  height: 80px;   /* taller to fit 2 lines */
-  line-height: 1.2;
 }
 
-/* Hover effect */
 .pdf-button:hover {
   background-color: #45a049;
-}
-
-/* Main line of button (top) */
-.main-text {
-  font-weight: bold;
-}
-
-/* Italics for bracket text (bottom) */
-.bracket-text {
-  font-style: italic;
-  margin-top: 4px;  /* small space under main text */
-}
-
-/* Responsive for very small screens */
-@media (max-width: 400px) {
-  .pdf-button {
-    height: 70px;   /* smaller height */
-    font-size: 14px; /* smaller font */
-  }
 }
